@@ -17,7 +17,12 @@ public class Resutaurante {
             System.out.println("3) crear una receta");
             System.out.println("4) contratar un mesero");
             System.out.println("5) contratar un chef");
-            System.out.println("6) salir");
+            System.out.println("6) cocinar un platillo");
+            System.out.println("7) quejarse del chef");
+            System.out.println("8) ordenar un platillo");
+            System.out.println("9) comer un platillo");
+            System.out.println("10) trabajar mas");
+            System.out.println("11) salir");
             System.out.print("Seleccione una opción: ");
             int opcion = escaner.nextInt();
             escaner.nextLine(); 
@@ -67,6 +72,36 @@ public class Resutaurante {
                     System.out.println("");
                     break;
                 case 6:
+                    System.out.print("Ingrese el nombre del platillo a cocinar: ");
+                    String platilloACocinar = escaner.nextLine();
+                    controlador.cocinarunplatillo(platilloACocinar);
+                    System.out.println("");
+                    break;
+                case 7:
+                    System.out.print("Ingrese el nombre del chef para quejarse: ");
+                    String chefQuejarse = escaner.nextLine();
+                    controlador.quejarseChef(chefQuejarse);
+                    System.out.println("");
+                    break;
+                case 8:
+                    System.out.print("Ingrese el nombre del platillo a ordenar: ");
+                    String platilloAOrdenar = escaner.nextLine();
+                    controlador.ordenarPlatillo(platilloAOrdenar);
+                    System.out.println("");
+                    break;
+                case 9:
+                    System.out.print("Ingrese el nombre del platillo a comer: ");
+                    String platilloAComer = escaner.nextLine();
+                    controlador.comerPlatillo(platilloAComer);
+                    System.out.println("");
+                    break;
+                case 10:
+                    System.out.print("Ingrese el nombre del chef para trabajar más: ");
+                    String chefTrabajar = escaner.nextLine();
+                    controlador.trabajarChef(chefTrabajar);
+                    break;
+
+                case 11:
                     i=100000;
                     break;            
                 default:
