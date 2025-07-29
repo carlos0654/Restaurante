@@ -39,5 +39,29 @@ public class controladorrestaurante {
         cliente.quejarse();
 
     }
+    public void cocinarunplatillo(String platillo) {
+        Platillo platilloCocinar = new Platillo(platillo, 30.00);
+        chef.cocinar(platilloCocinar);
+        System.out.println("El chef ha cocinado el platillo: " + platilloCocinar.getPlatName());
+    }
+    public void quejarseChef(String nombreChef) {
+        chefs chef = new chefs(nombreChef);
+        Cliente cliente = new Cliente("Pancracio");
+        cliente.quejarseChef(chef);
+        System.out.println("El cliente se ha quejado del chef: " + chef.getNombre_chef());
+    }
+    public void ordenarPlatillo(String platillo) {
+        mesero.servirPlatillo(platillo);
+    }
+    public void comerPlatillo(String platillo) {
+        Cliente cliente = new Cliente("Pancracio");
+        Platillo platilloComer = new Platillo(platillo, 30.00);
+        cliente.comer(platilloComer);
+    }
+    public void trabajarChef(String nombreChef) {
+        chefs chef = new chefs(nombreChef);
+        chef.setHorasExtra(chef.getHorasExtra() + 1);
+        System.out.println("El chef " + chef.getNombre_chef() + " ha trabajado una hora extra.");
+    }
     
 }
