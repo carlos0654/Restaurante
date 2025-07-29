@@ -20,7 +20,7 @@ class Cliente{
     }
 
     public void quejarseChef(chefs chef){
-        System.out.println("El cliente dice: aprenda a cocinar, " + chef.getNombre_chef() + " 😡");
+        System.out.println("El cliente dice: aprenda a cocinar, " + chef.getNombre_chef() + " >:(");
     }
 
     public void ordenar(Platillo platillo){
