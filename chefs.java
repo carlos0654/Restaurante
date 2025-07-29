@@ -18,7 +18,7 @@ public class chefs{
     public chefs(String nombre){
         this.nombreChef = nombre;
         this.horasExtra = 0;   
-        this.sueldoChef = 3700;   
+        this.sueldoChef = 4700;   
         this.calificacion = 3; 
         this.platillosCocinados = 0;
     }
@@ -58,8 +58,8 @@ public class chefs{
     //+
 
     //metodos
-    public void cocinar(){
-        System.out.println("el chef ha cocinado un platillo");
+    public void cocinar(Platillo platillo) {
+        System.out.println("el chef ha cocinado, " + platillo.getPlatName());
     }
     public void picar(){
         System.out.println("el chef ha picado los ingredientes");

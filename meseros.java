@@ -14,7 +14,7 @@ public class meseros{
     }
     public meseros(String nombreMesero){
         this.nombreMesero = nombreMesero;
-        this.sueldoMesero = "0"; 
+        this.sueldoMesero = "3500"; 
         this.horasExtras = 0;
         this.rango = "Novato";
     }
