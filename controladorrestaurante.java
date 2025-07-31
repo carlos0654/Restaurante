@@ -4,26 +4,34 @@ public class controladorrestaurante {
     private meseros mesero ;
     private Platillo platillo;
 
-    public Ingrediente crearingrediente(String nombre, int cantidad) {
-        return new Ingrediente(nombre, cantidad);
+    public String crearingrediente(String nombre, int cantidad) {
+        Ingrediente ingrediente = new Ingrediente(nombre, cantidad);
+        return ("Se ha pedido "+ ingrediente.getCantidad() + " del ingrediente: " + ingrediente.getIngName());
 
     }
-    public Platillo crearplatillo(String nombrePlatillo, double precio) {
-        return new Platillo(nombrePlatillo, precio);
+    public String crearplatillo(String nombrePlatillo, double precio) {
+        Platillo platillo = new Platillo(nombrePlatillo, precio);
+        return("Se ha creado el platillo: " + platillo.getPlatName() + " con un precio de $" + precio);
         
     }
-    public Receta crearreceta(String nombreReceta, String ingredienteNombre) {
+    public String crearreceta(String nombreReceta, String ingredienteNombre) {
         Ingrediente ingrediente = new Ingrediente(ingredienteNombre, 1);
-        return new Receta(nombreReceta, ingrediente);
+        Receta receta = new Receta(nombreReceta, ingrediente);
+        return("Se ha creado la receta: " + receta.getNombre() + " con el ingrediente: " + ingrediente.getIngName());
         
     }
-    public meseros contratarMesero(String nombre) {
-        return new meseros(nombre);
-        
+    public String contratarMesero(String nombre) {
+        meseros mesero = new meseros(nombre);
+        return("Se ha contratado al mesero: " + mesero.getNombreMesero());        
     }
     public String crearChef(String nombre) {
+<<<<<<< HEAD
         chef = new chefs(nombre);
         return "Se ha contratado al Chef: " + chef.getNombre_chef();
+=======
+        chefs chef = new chefs(nombre);
+        return("Se ha contratado al Chef: " + chef.getNombre_chef());
+>>>>>>> d503cf2974d3c369c04fd19b0771f012eb7a9843
         
     }
 

@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
 public class Resutaurante {
+    
     public static void main(String[] args) {
 
         
         
         Scanner escaner = new Scanner(System.in);
+        String mensajeRespuesta;
         
         controladorrestaurante controlador = new controladorrestaurante();
         
@@ -35,8 +37,8 @@ public class Resutaurante {
                     int cantidad = escaner.nextInt();
                     escaner.nextLine();
                     System.out.println("***********************");
-                    Ingrediente ingrediente = controlador.crearingrediente(nombreing, cantidad);
-                    System.out.println("Se ha pedido "+ ingrediente.getCantidad() + " del ingrediente: " + ingrediente.getIngName());
+                    mensajeRespuesta = controlador.crearingrediente(nombreing, cantidad);
+                    System.out.println(mensajeRespuesta);
                     System.out.println("");
                     break;
                 case 2:
@@ -46,8 +48,8 @@ public class Resutaurante {
                     double precio = escaner.nextDouble();
                     escaner.nextLine();
                     System.out.println("************************");
-                    Platillo platillo = controlador.crearplatillo(platilloNombre, precio);
-                    System.out.println("Se ha creado el platillo: " + platillo.getPlatName() + " con un precio de $" + precio);
+                    mensajeRespuesta = controlador.crearplatillo(platilloNombre, precio);
+                    System.out.println(mensajeRespuesta);
                     System.out.println("");
                     break;
 
@@ -57,8 +59,8 @@ public class Resutaurante {
                     System.out.print("Ingrese el ingrediente de la receta: ");
                     String ingredienteNombre = escaner.nextLine();
                     System.out.println("************************");
-                    Receta receta = controlador.crearreceta(recetaNombre, ingredienteNombre);  
-                    System.out.println("Se ha creado la receta: " + receta.getNombre() + " con el ingrediente: " + receta.getIngrediente().getIngName());
+                    mensajeRespuesta = controlador.crearreceta(recetaNombre, ingredienteNombre);  
+                    System.out.println(mensajeRespuesta);
                     System.out.println("");                 
                     break;
 
@@ -66,8 +68,8 @@ public class Resutaurante {
                     System.out.print("Ingrese el nombre del mesero: ");
                     String meseroNombre = escaner.nextLine();
                     System.out.println("************************");
-                    meseros mesero = controlador.contratarMesero(meseroNombre);
-                    System.out.println("Se ha contratado al mesero: " + mesero.getNombreMesero());
+                    mensajeRespuesta = controlador.contratarMesero(meseroNombre);
+                    System.out.println(mensajeRespuesta);
                     System.out.println("");
                     break;
 
@@ -75,9 +77,15 @@ public class Resutaurante {
                     System.out.print("Ingrese el nombre del chef: ");
                     String chefNombre = escaner.nextLine();
                     System.out.println("************************");
+<<<<<<< HEAD
                     String mensaje = controlador.crearChef(chefNombre);
                     System.out.println(mensaje);
                     
+=======
+                    mensajeRespuesta = controlador.crearChef(chefNombre);
+                    System.out.println(mensajeRespuesta);
+                    System.out.println("");
+>>>>>>> d503cf2974d3c369c04fd19b0771f012eb7a9843
                     break;
 
                 case 6:
