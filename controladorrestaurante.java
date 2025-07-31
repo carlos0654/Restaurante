@@ -25,13 +25,8 @@ public class controladorrestaurante {
         return("Se ha contratado al mesero: " + mesero.getNombreMesero());        
     }
     public String crearChef(String nombre) {
-<<<<<<< HEAD
         chef = new chefs(nombre);
         return "Se ha contratado al Chef: " + chef.getNombre_chef();
-=======
-        chefs chef = new chefs(nombre);
-        return("Se ha contratado al Chef: " + chef.getNombre_chef());
->>>>>>> d503cf2974d3c369c04fd19b0771f012eb7a9843
         
     }
 
