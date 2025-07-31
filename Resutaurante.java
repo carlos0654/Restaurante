@@ -35,7 +35,8 @@ public class Resutaurante {
                     int cantidad = escaner.nextInt();
                     escaner.nextLine();
                     System.out.println("***********************");
-                    controlador.crearingrediente(nombreing, cantidad);
+                    Ingrediente ingrediente = controlador.crearingrediente(nombreing, cantidad);
+                    System.out.println("Se ha pedido "+ ingrediente.getCantidad() + " del ingrediente: " + ingrediente.getIngName());
                     System.out.println("");
                     break;
                 case 2:
@@ -45,60 +46,81 @@ public class Resutaurante {
                     double precio = escaner.nextDouble();
                     escaner.nextLine();
                     System.out.println("************************");
-                    controlador.crearplatillo(platilloNombre, precio);
+                    Platillo platillo = controlador.crearplatillo(platilloNombre, precio);
+                    System.out.println("Se ha creado el platillo: " + platillo.getPlatName() + " con un precio de $" + precio);
                     System.out.println("");
                     break;
+
                 case 3:
                     System.out.print("Ingrese el nombre de la receta: ");
                     String recetaNombre = escaner.nextLine();
                     System.out.print("Ingrese el ingrediente de la receta: ");
                     String ingredienteNombre = escaner.nextLine();
                     System.out.println("************************");
-                    controlador.crearreceta(recetaNombre, ingredienteNombre);   
+                    Receta receta = controlador.crearreceta(recetaNombre, ingredienteNombre);  
+                    System.out.println("Se ha creado la receta: " + receta.getNombre() + " con el ingrediente: " + receta.getIngrediente().getIngName());
                     System.out.println("");                 
                     break;
+
                 case 4:
                     System.out.print("Ingrese el nombre del mesero: ");
                     String meseroNombre = escaner.nextLine();
                     System.out.println("************************");
-                    controlador.contratarMesero(meseroNombre);
+                    meseros mesero = controlador.contratarMesero(meseroNombre);
+                    System.out.println("Se ha contratado al mesero: " + mesero.getNombreMesero());
                     System.out.println("");
                     break;
+
                 case 5:
                     System.out.print("Ingrese el nombre del chef: ");
                     String chefNombre = escaner.nextLine();
                     System.out.println("************************");
-                    controlador.crearChef(chefNombre);
+                    chefs chef = controlador.crearChef(chefNombre);
+                    System.out.println("Se ha contratado al Chef: " + chef.getNombre_chef());
                     System.out.println("");
                     break;
+
                 case 6:
                     System.out.print("Ingrese el nombre del platillo a cocinar: ");
-                    String platilloACocinar = escaner.nextLine();
-                    controlador.cocinarunplatillo(platilloACocinar);
+                    String platilloCocinar = escaner.nextLine();
+                    controlador.cocinarunplatillo(platilloCocinar);
+                    System.out.println("El chef ha cocinado el platillo: " + platilloCocinar);
                     System.out.println("");
                     break;
+
                 case 7:
                     System.out.print("Ingrese el nombre del chef para quejarse: ");
                     String chefQuejarse = escaner.nextLine();
                     controlador.quejarseChef(chefQuejarse);
+                    System.out.println("El cliente dice: " + chefQuejarse + " aprenda a cocinar 😡😡");
+                    Cliente cliente = new Cliente("cliente enojado 2");
+                    cliente.quejarse();
                     System.out.println("");
                     break;
+
                 case 8:
                     System.out.print("Ingrese el nombre del platillo a ordenar: ");
                     String platilloAOrdenar = escaner.nextLine();
                     controlador.ordenarPlatillo(platilloAOrdenar);
+
                     System.out.println("");
                     break;
+
                 case 9:
                     System.out.print("Ingrese el nombre del platillo a comer: ");
                     String platilloAComer = escaner.nextLine();
                     controlador.comerPlatillo(platilloAComer);
+                    System.out.println("El cliente esta comiendo: " + platilloAComer);
                     System.out.println("");
+
                     break;
+
                 case 10:
                     System.out.print("Ingrese el nombre del chef para trabajar más: ");
                     String chefTrabajar = escaner.nextLine();
                     controlador.trabajarChef(chefTrabajar);
+                    System.out.println("El chef " + chefTrabajar + " ha trabajado una hora extra.");
+                
                     break;
 
                 case 11:
