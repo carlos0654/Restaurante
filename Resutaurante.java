@@ -75,9 +75,9 @@ public class Resutaurante {
                     System.out.print("Ingrese el nombre del chef: ");
                     String chefNombre = escaner.nextLine();
                     System.out.println("************************");
-                    chefs chef = controlador.crearChef(chefNombre);
-                    System.out.println("Se ha contratado al Chef: " + chef.getNombre_chef());
-                    System.out.println("");
+                    String mensaje = controlador.crearChef(chefNombre);
+                    System.out.println(mensaje);
+                    
                     break;
 
                 case 6:
@@ -91,18 +91,14 @@ public class Resutaurante {
                 case 7:
                     System.out.print("Ingrese el nombre del chef para quejarse: ");
                     String chefQuejarse = escaner.nextLine();
-                    controlador.quejarseChef(chefQuejarse);
-                    System.out.println("El cliente dice: " + chefQuejarse + " aprenda a cocinar 😡😡");
-                    Cliente cliente = new Cliente("cliente enojado 2");
-                    cliente.quejarse();
-                    System.out.println("");
+                    mensaje = controlador.quejarseChef(chefQuejarse);
+                    System.out.println(mensaje);
                     break;
 
                 case 8:
                     System.out.print("Ingrese el nombre del platillo a ordenar: ");
                     String platilloAOrdenar = escaner.nextLine();
                     controlador.ordenarPlatillo(platilloAOrdenar);
-
                     System.out.println("");
                     break;
 

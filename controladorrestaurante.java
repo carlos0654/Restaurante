@@ -1,13 +1,8 @@
 public class controladorrestaurante {
 
-
-
-    private chefs chef = new chefs("Juan");
-    private meseros mesero = new meseros("Maria");
-    private Platillo platillo = new Platillo("Pizza", 12.99);
-
-
-
+    private chefs chef;
+    private meseros mesero ;
+    private Platillo platillo;
 
     public Ingrediente crearingrediente(String nombre, int cantidad) {
         return new Ingrediente(nombre, cantidad);
@@ -26,8 +21,9 @@ public class controladorrestaurante {
         return new meseros(nombre);
         
     }
-    public chefs crearChef(String nombre) {
-        return new chefs(nombre);
+    public String crearChef(String nombre) {
+        chef = new chefs(nombre);
+        return "Se ha contratado al Chef: " + chef.getNombre_chef();
         
     }
 
@@ -49,7 +45,7 @@ public class controladorrestaurante {
         chefs chef = new chefs(nombreChef);
         Cliente cliente = new Cliente("Pancracio");
         cliente.quejarseChef(chef);
-        return chef.getNombre_chef();
+        return ("El cliente dice: " + nombreChef + " aprenda a cocinar 😡😡");
     }
 
     public String ordenarPlatillo(String platillo) {

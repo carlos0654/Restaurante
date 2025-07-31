@@ -10,6 +10,7 @@ class Platillo {
     }
 
     public void agregarSal(){
+        
         System.out.println("Anadiendo sal...");
 
     }
