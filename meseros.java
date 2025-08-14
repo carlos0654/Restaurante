@@ -51,8 +51,8 @@ public class meseros{
     public void anotarPedido(String pedido) {
         System.out.println("El mesero " + nombreMesero + " ha anotado el pedido: " + pedido);
     }
-    public void servirPlatillo(String platillo) {
-        System.out.println("El mesero " + nombreMesero + " ha servido el platillo: " + platillo);
+    public String servirPlatillo(String platillo) {
+        return ("El mesero " + nombreMesero + " ha servido el platillo: " + platillo);
     }
     public void limpiarMesa() {
         System.out.println("El mesero " + nombreMesero + " ha limpiado la mesa.");

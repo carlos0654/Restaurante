@@ -27,8 +27,8 @@ class Cliente{
         System.out.println("El cliente ha ordenado: " + platillo.getPlatName());
     }
 
-    public void comer(Platillo platillo){
-        System.out.println("Comiendo " + platillo.getPlatName());
+    public String comer(Platillo platillo){
+        return("Comiendo " + platillo.getPlatName());
     }
 
     public String getClientName(){

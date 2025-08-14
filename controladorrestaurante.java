@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+
 public class controladorrestaurante {
 
     private chefs chef;
-    private meseros mesero ;
+    private meseros mesero = new meseros("Juan");
+    
     private Platillo platillo;
+    private ArrayList<Platillo> platilloscantidad = new ArrayList<>();
 
     public String crearingrediente(String nombre, int cantidad) {
         Ingrediente ingrediente = new Ingrediente(nombre, cantidad);
@@ -11,6 +15,7 @@ public class controladorrestaurante {
     }
     public String crearplatillo(String nombrePlatillo, double precio) {
         Platillo platillo = new Platillo(nombrePlatillo, precio);
+        platilloscantidad.add(platillo);
         return("Se ha creado el platillo: " + platillo.getPlatName() + " con un precio de $" + precio);
         
     }
@@ -52,20 +57,26 @@ public class controladorrestaurante {
     }
 
     public String ordenarPlatillo(String platillo) {
-        mesero.servirPlatillo(platillo);
-        return platillo;
+        
+        return mesero.servirPlatillo(platillo);
     }
 
-    public Platillo comerPlatillo(String platillo) {
+    public String comerPlatillo(String platillo) {
         Cliente cliente = new Cliente("Pancracio");
         Platillo platilloComer = new Platillo(platillo, 30.00);
-        cliente.comer(platilloComer);
-        return platilloComer;
+        
+        return cliente.comer(platilloComer);
     }
-    public chefs trabajarChef(String nombreChef) {
-        chefs chef = new chefs(nombreChef);
-        chef.setHorasExtra(chef.getHorasExtra() + 1);
-        return chef;
+    public String trabajarChef(int numero) {
+        
+            
+            return "Platillo: " + platilloscantidad.get(numero).getPlatName();
+        
+        
+        
+    }
+    public int cantidadplatillos(){
+        return platilloscantidad.size();
     }
     
 }
